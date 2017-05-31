@@ -1,0 +1,62 @@
+﻿<Window x:Class="SlimGIS.Samples.TrackAndEdit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SlimGIS.Samples.TrackAndEdit"
+        xmlns:st="clr-namespace:SlimGis.ShareKit.Wpf;assembly=SGShareKit.Wpf"
+        xmlns:sgwpf="clr-namespace:SlimGis.MapKit.Wpf;assembly=SGMapKit.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <st:SampleHeader Grid.Row="0" Title="Track and edit sample - WPF"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <sgwpf:MapControl x:Name="map" Grid.Column="0" Loaded="map_Loaded"/>
+            <Border Width="180" BorderBrush="Black" BorderThickness="1 0 0 0" Grid.Column="1">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Header="Track Geometries:" Grid.Row="0">
+                        <StackPanel>
+                            <ComboBox x:Name="TrackComboBox" SelectedItem="{Binding ElementName=map,Path=Behaviors.TrackBehavior.TrackMode}"/>
+                            <Button x:Name="EditFeaturesButton" Margin="0 5 0 0" IsEnabled="False" Click="EditFeaturesButton_Click">Start editing</Button>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="Edit Geometries" Grid.Row="2">
+                        <StackPanel>
+                            <StackPanel.Resources>
+                                <Style TargetType="CheckBox">
+                                    <Setter Property="Margin" Value="0 5 0 0"/>
+                                    <EventSetter Event="Click" Handler="EditOptionCheckBox_Click" />
+                                </Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Margin" Value="0 5 0 0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <CheckBox IsChecked="{Binding ElementName=map, Path=Behaviors.EditBehavior.CanTranslate, Mode=TwoWay}">Move</CheckBox>
+                            <CheckBox IsChecked="{Binding ElementName=map, Path=Behaviors.EditBehavior.CanReshape, Mode=TwoWay}">Reshape</CheckBox>
+                            <CheckBox IsChecked="{Binding ElementName=map, Path=Behaviors.EditBehavior.CanResize, Mode=TwoWay}">Resize</CheckBox>
+                            <CheckBox IsChecked="{Binding ElementName=map, Path=Behaviors.EditBehavior.CanRotation, Mode=TwoWay}">Rotate</CheckBox>
+                            <Button x:Name="DeleteInEditingFeaturesButton" IsEnabled="False" Click="DeleteInEditingFeaturesButton_Click">Delete in-editing features</Button>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </Border>
+        </Grid>
+        <st:SampleFooter Grid.Row="2"/>
+    </Grid>
+</Window>
