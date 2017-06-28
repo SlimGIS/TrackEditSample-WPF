@@ -60,3 +60,7 @@ When we understand the operation, we could start to edit any data source like sh
 > __A Tip for Performance__: the drawing and editing geometries are mantained in memory, and it is rendered dynamically during the operation. Please keep the editing or drawing features collection lite to get better performance. A scenario is adjusting a country's border. A bad experience is to add all the countries geometry in a shapefile to the edit behavior. The right solution is to select the single country that is going to edit, add this selected country into edit behavior. Once the editing complete, move it back to its source.
 
 That's all for drawing and editing geometries.
+
+## Related Resources
+- [Source code](https://github.com/SlimGIS/TrackAndEdit-WPF)
+- [Video](https://www.youtube.com/watch?v=CRxryzTTZi0)
