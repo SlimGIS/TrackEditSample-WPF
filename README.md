@@ -1,6 +1,8 @@
+Keywords:   drawing tool, editing apps, drawing geometry
+
 # Draw and Edit Geometries
 
-In GIS application, Drawing and Editing geometries is a very normal function. SlimGIS built a serial operation to make this job very easy and convenient to use. Follow my article to see how we support it. Here is a short video.
+<desc>In GIS application, Drawing and Editing geometries is a very normal function. Such as embeding a drawing tool in your mapping software, build an editing apps that allows to edit your existing map data, or pushing a new drawing geometry into the map data.  SlimGIS built a serial operation to make this job very easy and convenient to use.</desc> Follow this guide to see how we support it. Here is a short video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CRxryzTTZi0" frameborder="0" allowfullscreen></iframe>
 
