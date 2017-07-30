@@ -50,7 +50,7 @@
                             <CheckBox IsChecked="{Binding ElementName=map, Path=Behaviors.EditBehavior.CanTranslate, Mode=TwoWay}">Move</CheckBox>
                             <CheckBox IsChecked="{Binding ElementName=map, Path=Behaviors.EditBehavior.CanReshape, Mode=TwoWay}">Reshape</CheckBox>
                             <CheckBox IsChecked="{Binding ElementName=map, Path=Behaviors.EditBehavior.CanResize, Mode=TwoWay}">Resize</CheckBox>
-                            <CheckBox IsChecked="{Binding ElementName=map, Path=Behaviors.EditBehavior.CanRotation, Mode=TwoWay}">Rotate</CheckBox>
+                            <CheckBox IsChecked="{Binding ElementName=map, Path=Behaviors.EditBehavior.CanRotate, Mode=TwoWay}">Rotate</CheckBox>
                             <Button x:Name="DeleteInEditingFeaturesButton" IsEnabled="False" Click="DeleteInEditingFeaturesButton_Click">Delete in-editing features</Button>
                         </StackPanel>
                     </GroupBox>
